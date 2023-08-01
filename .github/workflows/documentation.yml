@@ -39,4 +39,5 @@ jobs:
         file_pattern: docs/*
         commit_message: "Automatic docs update"
         branch: gh-pages
+        disable_globbing: true
         repository: .
