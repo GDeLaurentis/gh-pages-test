@@ -61,17 +61,6 @@ def padicfy(func):
     return wrapper_padicfy
 
 
-def check_orderable(func):
-    @functools.wraps(func)
-    def wrapper_check_orderable(self, other):
-        if type(self) != type(other):
-            raise TypeError("unorderable types: {} < {}".format(type(self), type(other)))
-        if self.p != other.p:
-            raise Exception("unorderable padics over different primes: {}, {}.".format(self.p, other.p))
-        return func(self, other)
-    return wrapper_check_orderable
-
-
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
 
