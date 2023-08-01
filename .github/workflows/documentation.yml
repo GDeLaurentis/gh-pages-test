@@ -40,4 +40,4 @@ jobs:
         commit_message: "Automatic docs update"
         branch: gh-pages
         disable_globbing: true
-        repository: .
+        repository: pyadic
