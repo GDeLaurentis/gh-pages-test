@@ -1,4 +1,4 @@
-# pyAdic
+# GH-PAGES-TEST
 
 [![Continuous Integration Status](https://github.com/GDeLaurentis/gh-pages-test/actions/workflows/continuous_integration.yml/badge.svg)](https://github.com/GDeLaurentis/gh-pages-test/actions)
 [![Coverage](https://img.shields.io/badge/Coverage-93%25-green?labelColor=2a2f35)](https://github.com/GDeLaurentis/gh-pages-test/actions)
