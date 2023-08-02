@@ -42,6 +42,7 @@ class ModP(object):
     __slots__ = 'n', 'p'
 
     def __init__(self, n, p=None):
+        # trying dummy change
         if p is not None and isinteger(n) and isinteger(p):
             self.n = int(n) % int(p)
             self.p = int(p)
