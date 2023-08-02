@@ -33,6 +33,10 @@ jobs:
       run: |
         cd sphinx
         make github
+    - name: Check the folder status
+      run: |
+        ls
+        ls pyadic/
     - name: Commit docs to gh-pages branch
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
