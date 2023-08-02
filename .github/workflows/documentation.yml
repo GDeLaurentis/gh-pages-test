@@ -45,10 +45,17 @@ jobs:
         git config user.email "<>"
     - name: Commit docs to gh-pages branch
       run: |
+        echo "fetching..."
         git fetch
+        git status
         git reset --hard
+        echo "checking out gh-pages..."
         git checkout gh-pages
         touch docs/.nojekyll
-        git add -f README.md docs/*
+        git status
+        git add -f docs/.nojekyll
+        git add README.md docs/*
+        echo "committing changes..."
+        git status
         git commit -m "Automated docs update."
         git push origin gh-pages
