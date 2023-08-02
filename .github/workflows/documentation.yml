@@ -46,9 +46,8 @@ jobs:
     - name: Commit docs to gh-pages branch
       run: |
         git fetch
-        git stash
+        git reset --hard
         git checkout gh-pages
-        git stash pop
         touch docs/.nojekyll
         git add README.md docs/*
         git commit -m "Automated docs update."
