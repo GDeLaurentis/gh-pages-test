@@ -49,6 +49,6 @@ jobs:
         git reset --hard
         git checkout gh-pages
         touch docs/.nojekyll
-        git add README.md docs/*
+        git add -f README.md docs/*
         git commit -m "Automated docs update."
         git push origin gh-pages
