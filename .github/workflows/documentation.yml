@@ -33,6 +33,7 @@ jobs:
       run: |
         cd sphinx
         make github
+        git status
     - name: Check the folder status
       run: |
         echo "pwd"
@@ -48,6 +49,7 @@ jobs:
     - name: Commit docs to gh-pages branch
       run: |
         echo "fetching..."
+        git status
         git fetch
         git status
         git reset --hard
