@@ -35,7 +35,10 @@ jobs:
         make github
     - name: Check the folder status
       run: |
+        echo "ls"
         ls
+        echo "ls docs/"
+        ls docs/
     - name: setup git config
       run: |
         git config user.name "GitHub Actions Bot"
@@ -43,6 +46,7 @@ jobs:
     - name: Commit docs to gh-pages branch
       run: |
         git fetch
+        git stash
         git checkout gh-pages
         git add README.md docs/*
         git commit -m "Automated docs update."
