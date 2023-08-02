@@ -16,13 +16,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Set up Python 3.9
       uses: actions/setup-python@v2
       with:
         python-version: 3.9
     - name: Checkout this Repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         path: pyadic
     - name: Install dependencies
@@ -37,10 +37,13 @@ jobs:
       run: |
         ls
         ls pyadic/
+    - name: setup git config
+      run: |
+        git config user.name "GitHub Actions Bot"
+        git config user.email "<>"
     - name: Commit docs to gh-pages branch
-      uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        file_pattern: README.md
-        commit_message: "Automatic docs update"
-        branch: gh-pages
-        repository: pyadic
+      run: |
+        git checkout gh-pages
+        git add README.md docs/*
+        git commit -m "Automated docs update."
+        git push origin gh-pages
