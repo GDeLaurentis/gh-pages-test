@@ -35,6 +35,8 @@ jobs:
         make github
     - name: Check the folder status
       run: |
+        echo "pwd"
+        pwd
         echo "ls"
         ls
         echo "ls docs/"
@@ -54,8 +56,11 @@ jobs:
         touch docs/.nojekyll
         git status
         git add -f docs/.nojekyll
+        git add -f docs/.buildinfo
         git add README.md docs/*
-        echo "committing changes..."
+        echo "committing changes if needed..."
         git status
-        git commit -m "Automated docs update."
-        git push origin gh-pages
+        if ! git diff-index --quiet HEAD; then
+          git commit -m "Automated docs update."
+          git push origin gh-pages
+        fi
