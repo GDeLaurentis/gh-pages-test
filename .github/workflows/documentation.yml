@@ -55,6 +55,7 @@ jobs:
         git checkout gh-pages
         touch docs/.nojekyll
         git status
+        git checkout main README.md
         git add -f docs/.nojekyll
         git add -f docs/.buildinfo
         git add README.md docs/*
