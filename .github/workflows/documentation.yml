@@ -24,11 +24,12 @@ jobs:
     - name: Checkout this Repo
       uses: actions/checkout@v3
       with:
-        path: pyadic
+        path: .
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install sphinx sphinx-rtd-theme
+        pip install -e .
     - name: Build docs
       run: |
         cd sphinx
@@ -49,7 +50,6 @@ jobs:
     - name: Commit docs to gh-pages branch
       run: |
         echo "fetching..."
-        git status
         git fetch
         git status
         git reset --hard
