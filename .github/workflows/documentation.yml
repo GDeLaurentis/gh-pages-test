@@ -48,6 +48,8 @@ jobs:
         git fetch
         git stash
         git checkout gh-pages
+        git stash pop
+        touch docs/.nojekyll
         git add README.md docs/*
         git commit -m "Automated docs update."
         git push origin gh-pages
