@@ -31,7 +31,7 @@ To generate a phase space point follow this very simple example:
   .. code-block:: python
 		  :linenos:
 		   
-		     import lips
+		     import pyadic
 		     oParticles = lips.Particles(6)
 
 this is a six-point phase space point, with complex momenta, satisfying both momentum conservation and massless on-shell relations.
