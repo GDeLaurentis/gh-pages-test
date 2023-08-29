@@ -34,15 +34,6 @@ jobs:
       run: |
         cd sphinx
         make github
-        git status
-    - name: Check the folder status
-      run: |
-        echo "pwd"
-        pwd
-        echo "ls"
-        ls
-        echo "ls docs/"
-        ls docs/
     - name: setup git config
       run: |
         git config user.name "GitHub Actions Bot"
@@ -52,14 +43,12 @@ jobs:
         cp -r docs/ docs.back/
         echo "fetching..."
         git fetch
-        git status
         git reset --hard
         echo "checking out gh-pages..."
         git checkout gh-pages
         rm -r docs/
         cp -r docs.back/ docs/
         touch docs/.nojekyll
-        git status
         git checkout main README.md
         git add -f docs/.nojekyll
         git add -f docs/.buildinfo
